@@ -6,7 +6,7 @@ Release:	0.1
 License:	GPL
 Group:		Libraries
 Source0:	ftp://ftp.alsa-project.org/pub/firmware/%{name}-%{version}.tar.bz2
-# Source0-md5:	f778eb35e652fc3e4b726bb021b1ce9d
+# Source0-md5:	cea668b251e48583c732b51a5b041dc0
 URL:		http://www.alsa-project.org/
 BuildRequires:	automake
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
