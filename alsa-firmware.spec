@@ -1,14 +1,15 @@
 Summary:	Advanced Linux Sound Architecture - firmware data
 Summary(pl):	Advanced Linux Sound Architecture - dane firmware
 Name:		alsa-firmware
-Version:	1.0.11
+Version:	1.0.12
 Release:	0.1
 License:	GPL
 Group:		Libraries
 Source0:	ftp://ftp.alsa-project.org/pub/firmware/%{name}-%{version}.tar.bz2
-# Source0-md5:	bd573f4dac7f4786a20bb4427229acef
+# Source0-md5:	5228625d822e6995c96b80f8c3785db6
 URL:		http://www.alsa-project.org/
 BuildRequires:	automake
+BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_noautostrip	.*\.elf
@@ -52,7 +53,9 @@ rm -rf $RPM_BUILD_ROOT
 # -hotplug subpackage? (R: hotplug)
 %{hotplugfwdir}/digiface_*.bin
 %{hotplugfwdir}/multiface_*.bin
+%{hotplugfwdir}/asihpi
 %{hotplugfwdir}/ea
+%{hotplugfwdir}/emu
 %{hotplugfwdir}/mixart
 %{hotplugfwdir}/pcxhr
 %{hotplugfwdir}/vx
