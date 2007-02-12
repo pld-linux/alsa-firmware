@@ -1,5 +1,5 @@
 Summary:	Advanced Linux Sound Architecture - firmware data
-Summary(pl):	Advanced Linux Sound Architecture - dane firmware
+Summary(pl.UTF-8):   Advanced Linux Sound Architecture - dane firmware
 Name:		alsa-firmware
 Version:	1.0.13
 Release:	0.1
@@ -18,7 +18,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 Firmware data for ALSA.
 
-%description -l pl
+%description -l pl.UTF-8
 Dane firmware dla ALSA.
 
 %prep
