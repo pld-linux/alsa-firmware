@@ -1,12 +1,12 @@
 Summary:	Advanced Linux Sound Architecture - firmware data
 Summary(pl.UTF-8):	Advanced Linux Sound Architecture - dane firmware
 Name:		alsa-firmware
-Version:	1.0.13
+Version:	1.0.14rc2
 Release:	0.1
 License:	GPL
 Group:		Libraries
 Source0:	ftp://ftp.alsa-project.org/pub/firmware/%{name}-%{version}.tar.bz2
-# Source0-md5:	97de41a923e68c3d6c52c14f1a2843df
+# Source0-md5:	98afcd48e4fc9bcf5e43276a9a81cb7f
 URL:		http://www.alsa-project.org/
 BuildRequires:	automake
 BuildArch:	noarch
@@ -66,3 +66,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/alsa/firmware/pcxhrloader
 %{_datadir}/alsa/firmware/usx2yloader
 %{_datadir}/alsa/firmware/vxloader
+
+/lib/firmware/emagic
+/lib/firmware/ess
+/lib/firmware/korg
+/lib/firmware/sb16
+/lib/firmware/yamaha
