@@ -1,12 +1,12 @@
 Summary:	Advanced Linux Sound Architecture - firmware data
 Summary(pl.UTF-8):	Advanced Linux Sound Architecture - dane firmware
 Name:		alsa-firmware
-Version:	1.0.13
+Version:	1.0.14
 Release:	0.1
-License:	GPL
+License:	varies (GPL, BSD-like, distributable)
 Group:		Libraries
 Source0:	ftp://ftp.alsa-project.org/pub/firmware/%{name}-%{version}.tar.bz2
-# Source0-md5:	97de41a923e68c3d6c52c14f1a2843df
+# Source0-md5:	22c9e8664af7366d27f67f0c429f8971
 URL:		http://www.alsa-project.org/
 BuildRequires:	automake
 BuildArch:	noarch
@@ -43,22 +43,29 @@ cp -f mixartloader/README README.mixartloader
 cp -f pcxhrloader/README README.pcxhrloader
 cp -f usx2yloader/README README.usx2yloader
 cp -f vxloader/README README.vxloader
+cp -f aica/license.txt license.aica
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc README* mixartloader/miXart.conf pcxhrloader/pcxhr.conf usx2yloader/us*.conf vxloader/vx*.conf
+%doc README* mixartloader/miXart.conf pcxhrloader/pcxhr.conf usx2yloader/us*.conf vxloader/vx*.conf aica/Dreamcast_sound.txt license.aica
 # -hotplug subpackage? (R: hotplug)
+%{hotplugfwdir}/aica_firmware.bin
 %{hotplugfwdir}/digiface_*.bin
 %{hotplugfwdir}/multiface_*.bin
 %{hotplugfwdir}/asihpi
 %{hotplugfwdir}/ea
+%{hotplugfwdir}/emagic
 %{hotplugfwdir}/emu
+%{hotplugfwdir}/ess
+%{hotplugfwdir}/korg
 %{hotplugfwdir}/mixart
 %{hotplugfwdir}/pcxhr
+%{hotplugfwdir}/sb16
 %{hotplugfwdir}/vx
+%{hotplugfwdir}/yamaha
 # -alsa subpackage? (R: alsa-tools, %{_datadir}/alsa dir)
 %dir %{_datadir}/alsa/firmware
 %{_datadir}/alsa/firmware/hdsploader
