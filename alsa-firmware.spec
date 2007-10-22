@@ -1,12 +1,12 @@
 Summary:	Advanced Linux Sound Architecture - firmware data
 Summary(pl.UTF-8):	Advanced Linux Sound Architecture - dane firmware
 Name:		alsa-firmware
-Version:	1.0.14
+Version:	1.0.15
 Release:	1
 License:	varies (GPL, BSD-like, distributable)
 Group:		Libraries
 Source0:	ftp://ftp.alsa-project.org/pub/firmware/%{name}-%{version}.tar.bz2
-# Source0-md5:	22c9e8664af7366d27f67f0c429f8971
+# Source0-md5:	2ce5cab28c87b9cb161b6c7212baa2b1
 URL:		http://www.alsa-project.org/
 BuildRequires:	automake
 BuildArch:	noarch
