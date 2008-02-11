@@ -1,19 +1,18 @@
 Summary:	Advanced Linux Sound Architecture - firmware data
 Summary(pl.UTF-8):	Advanced Linux Sound Architecture - dane firmware
 Name:		alsa-firmware
-Version:	1.0.15
+Version:	1.0.16
 Release:	1
 License:	varies (GPL, BSD-like, distributable)
 Group:		Libraries
 Source0:	ftp://ftp.alsa-project.org/pub/firmware/%{name}-%{version}.tar.bz2
-# Source0-md5:	2ce5cab28c87b9cb161b6c7212baa2b1
+# Source0-md5:	15eda06ee26156f9f01064d47e1f8056
 URL:		http://www.alsa-project.org/
 BuildRequires:	automake
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_noautostrip	.*\.elf
-%define		hotplugfwdir	/lib/firmware
 
 %description
 Firmware data for ALSA.
@@ -28,7 +27,7 @@ Dane firmware dla ALSA.
 cp -f /usr/share/automake/config.sub .
 %configure \
 	--disable-buildfw \
-	--with-hotplug-dir=%{hotplugfwdir}
+	--with-hotplug-dir=/lib/firmware
 
 %{__make}
 
@@ -51,22 +50,24 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc README* mixartloader/miXart.conf pcxhrloader/pcxhr.conf usx2yloader/us*.conf vxloader/vx*.conf aica/Dreamcast_sound.txt license.aica
-# -hotplug subpackage? (R: hotplug)
-%{hotplugfwdir}/aica_firmware.bin
-%{hotplugfwdir}/digiface_*.bin
-%{hotplugfwdir}/multiface_*.bin
-%{hotplugfwdir}/asihpi
-%{hotplugfwdir}/ea
-%{hotplugfwdir}/emagic
-%{hotplugfwdir}/emu
-%{hotplugfwdir}/ess
-%{hotplugfwdir}/korg
-%{hotplugfwdir}/mixart
-%{hotplugfwdir}/pcxhr
-%{hotplugfwdir}/sb16
-%{hotplugfwdir}/vx
-%{hotplugfwdir}/yamaha
-# -alsa subpackage? (R: alsa-tools, %{_datadir}/alsa dir)
+# loadable by hotplug/udev
+/lib/firmware/aica_firmware.bin
+/lib/firmware/digiface_*.bin
+/lib/firmware/multiface_*.bin
+/lib/firmware/asihpi
+/lib/firmware/ea
+/lib/firmware/emagic
+/lib/firmware/emu
+/lib/firmware/ess
+/lib/firmware/korg
+/lib/firmware/mixart
+/lib/firmware/pcxhr
+/lib/firmware/sb16
+# just dead symlinks
+#/lib/firmware/turtlebeach
+/lib/firmware/vx
+/lib/firmware/yamaha
+# -alsa subpackage? loadable by alsa (R: alsa-tools, %{_datadir}/alsa dir)
 %dir %{_datadir}/alsa/firmware
 %{_datadir}/alsa/firmware/hdsploader
 %{_datadir}/alsa/firmware/mixartloader
