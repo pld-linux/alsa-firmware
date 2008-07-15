@@ -44,6 +44,12 @@ cp -f usx2yloader/README README.usx2yloader
 cp -f vxloader/README README.vxloader
 cp -f aica/license.txt license.aica
 
+# remove dead symlinks to /etc/sound/* (with sanity check)
+for l in $RPM_BUILD_ROOT/lib/firmware/turtlebeach/*.bin ; do
+	test -h $l || exit 1
+	rm -f $l
+done
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
