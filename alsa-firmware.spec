@@ -1,12 +1,12 @@
 Summary:	Advanced Linux Sound Architecture - firmware data
 Summary(pl.UTF-8):	Advanced Linux Sound Architecture - dane firmware
 Name:		alsa-firmware
-Version:	1.0.23
+Version:	1.0.24.1
 Release:	1
 License:	varies (GPL, BSD-like, distributable)
 Group:		Libraries
 Source0:	ftp://ftp.alsa-project.org/pub/firmware/%{name}-%{version}.tar.bz2
-# Source0-md5:	e3f755331d6d485f6fd697249b90f877
+# Source0-md5:	d37434dfcfececd8581d2f0bbe2fcf1b
 URL:		http://www.alsa-project.org/
 BuildRequires:	automake
 BuildArch:	noarch
@@ -68,6 +68,7 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/korg
 /lib/firmware/mixart
 /lib/firmware/pcxhr
+/lib/firmware/rpm_firmware.bin
 /lib/firmware/sb16
 # just dead symlinks
 #/lib/firmware/turtlebeach
