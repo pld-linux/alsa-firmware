@@ -1,12 +1,12 @@
 Summary:	Advanced Linux Sound Architecture - firmware data
 Summary(pl.UTF-8):	Advanced Linux Sound Architecture - dane firmware
 Name:		alsa-firmware
-Version:	1.0.25
+Version:	1.0.27
 Release:	1
 License:	varies (GPL, BSD-like, distributable)
 Group:		Libraries
 Source0:	ftp://ftp.alsa-project.org/pub/firmware/%{name}-%{version}.tar.bz2
-# Source0-md5:	f1939da45b162c83a726c54a470ef139
+# Source0-md5:	b373b350d5151dd7d64db2fc12936b04
 URL:		http://www.alsa-project.org/
 BuildRequires:	automake
 BuildArch:	noarch
@@ -37,6 +37,7 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
+cp -f ca0132/README README.ca0132
 cp -f hdsploader/README README.hdsploader
 cp -f mixartloader/README README.mixartloader
 cp -f pcxhrloader/README README.pcxhrloader
@@ -55,14 +56,15 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc README* mixartloader/miXart.conf pcxhrloader/pcxhr.conf usx2yloader/us*.conf vxloader/vx*.conf aica/Dreamcast_sound.txt license.aica
+%doc README* ca0132/creative.txt mixartloader/miXart.conf pcxhrloader/pcxhr.conf usx2yloader/us*.conf vxloader/vx*.conf aica/Dreamcast_sound.txt license.aica
 # loadable by hotplug/udev
 /lib/firmware/aica_firmware.bin
+/lib/firmware/ctefx.bin
+/lib/firmware/ctspeq.bin
 /lib/firmware/digiface_*.bin
 /lib/firmware/multiface_*.bin
 /lib/firmware/asihpi
 /lib/firmware/ea
-/lib/firmware/emagic
 /lib/firmware/emu
 /lib/firmware/ess
 /lib/firmware/korg
