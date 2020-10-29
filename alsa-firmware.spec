@@ -24,7 +24,6 @@ Dane firmware dla ALSA.
 %setup -q
 
 %build
-cp -f /usr/share/automake/config.sub .
 %configure \
 	--build=%{_build_platform} \
 	--disable-buildfw \
