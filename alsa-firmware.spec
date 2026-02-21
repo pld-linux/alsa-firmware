@@ -28,7 +28,7 @@ Dane firmware dla ALSA.
 
 %build
 %configure \
-	--build=%{_host} \
+	--build=%{_build_cpu}-pld-linux \
 	--disable-buildfw \
 	--with-hotplug-dir=/lib/firmware
 
