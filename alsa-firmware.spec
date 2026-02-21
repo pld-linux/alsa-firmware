@@ -2,17 +2,20 @@ Summary:	Advanced Linux Sound Architecture - firmware data
 Summary(pl.UTF-8):	Advanced Linux Sound Architecture - dane firmware
 Name:		alsa-firmware
 Version:	1.2.4
-Release:	2
+Release:	3
 License:	varies (GPL, BSD-like, distributable)
 Group:		Libraries
-Source0:	ftp://ftp.alsa-project.org/pub/firmware/%{name}-%{version}.tar.bz2
+Source0:	http://www.alsa-project.org/files/pub/firmware/%{name}-%{version}.tar.bz2
 # Source0-md5:	ee6c1d24a1a4ac1d86992b408ed710a2
 URL:		http://www.alsa-project.org/
 BuildRequires:	automake
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		_noautostrip	.*\.elf
+%define		no_install_post_strip	1
+%define		_enable_debug_packages	0
+%define		_noautochrpath		.*/lib/firmware/.*
+%define		_binaries_in_noarch_packages_terminate_build	0
 
 %description
 Firmware data for ALSA.
@@ -25,7 +28,7 @@ Dane firmware dla ALSA.
 
 %build
 %configure \
-	--build=%{_build_platform} \
+	--build=%{_host} \
 	--disable-buildfw \
 	--with-hotplug-dir=/lib/firmware
 
